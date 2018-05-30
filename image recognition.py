@@ -167,7 +167,9 @@ def model(X_train, Y_train, X_test, Y_test, num_iterations=2000, learning_rate=0
     
     return d
 
-
+config = tf.ConfigProto()
+config.gpu_options.allow_growth = True
+session = tf.Session(config=config)
 with tf.device('/gpu:0'):
     d = model(train_set_x, train_set_y, test_set_x, test_set_y, num_iterations = 200, learning_rate = 0.005, print_cost = True)
 
