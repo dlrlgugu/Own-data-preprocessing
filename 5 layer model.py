@@ -23,7 +23,7 @@ test_x_flatten = test_x_orig.reshape(test_x_orig.shape[0], -1).T
 train_x = train_x_flatten/255.
 test_x = test_x_flatten/255.
 
-layers_dims=[12288,20,10,15,5,3,1] # 4 layer.
+layers_dims=[12288,20,10,15,5,3,1] # you can change layers.
 
 def L_layer_model(X, Y, layers_dims, learning_rate = 0.0075, num_iterations = 2000, print_cost=False):
     np.random.seed(1)
