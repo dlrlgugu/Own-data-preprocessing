@@ -175,8 +175,9 @@ with tf.device('/gpu:0'):
 """
 d = model(train_set_x, train_set_y, test_set_x, test_set_y, num_iterations = 2000, learning_rate = 0.005, print_cost = True)
 
-"""
-test_image = ["cat1.jpg","cat2.jpg","cat3.jpg"]
+
+test_image = ["cat.jpg","cat1.jpg","cat2.jpg","cat3.jpg","cat4.jpg",
+              "dog1.jpg","dog2.jpg","dog3.jpg"]
 for i in test_image:
     image = np.array(ndimage.imread(i,flatten=False))
     my_image = scipy.misc.imresize(image,size=(64,64)).reshape((1,64*64*3)).T
@@ -186,4 +187,4 @@ for i in test_image:
     print("y = " + str(np.squeeze(my_predicted_image)) + ", your algorithm predicts a \"" )
     print (int(np.squeeze(my_predicted_image)) )
 
-"""
+
